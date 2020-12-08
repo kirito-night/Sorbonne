@@ -1,0 +1,143 @@
+les arbres 
+
+type 'a btree = 
+    Empty 
+    |Node of ('a btree * 'a * 'a btree)
+    ou bien  Node of ( 'a * 'a btree * 'a btree)
+
+
+faire la definition du type 
+
+application des constructeurs 
+
+expression
+
+Node(1,
+    Node(2,Empty,Empty)
+    Node(3,Empty,
+        Node(4,Empty,Empty)))
+
+le compilatuer se charge de traduire tout l'expression en pointeur
+
+
+
+Filtrage (1)
+cas de constructeurs 
+Test de vacuite d'un arbre : true si vide 
+
+(is_empty Empty) = true
+(is_empty (Node(bt1,x,bt2))) = false
+    let is_empty (bt: 'a btree): bool = 
+        match bt with 
+        |Empty -> true
+        |_ -> false
+
+extraction de l'etiquette a la racine
+(get_root (Node (bt1, x ,bt2))) = x 
+
+let get_root (bt: 'a btree): 'a = 
+    match bt with 
+        Empty -> failwith "Empty"
+        |Node (bt1 , x, bt2) -> x
+
+
+destruction reconstruction 
+
+(swap Empty) = Empty
+(swap (Node ( bt1, x,bt2)))= Node(bt2,x,bt1)
+
+
+let swap (bt : 'a btree ) : 'a btree = 
+    match bt with 
+    |Empty -> Empty
+    |Node(bt1,x,bt2)-> Node(bt2,x,bt1)
+
+
+(mem_btree x bt) = true si x etiquette dans bt
+
+    chercher x dans l'arbres
+
+
+let rec mem_btree (y:'a) (bt: 'a btree): = 
+    match bt with 
+        Empty ->false
+        |Node(bt,x,bt2) ->
+            (x == y) || (mem_btree y bt1) || (mem_btree y bt2)
+
+
+taille d'un arbre
+(size Empty) = Empty
+(size (Node(bt1, x, bt2)))= 1 + (size b)t1)+ (size bt2)
+
+let rec size (bt: 'a btree) : int = 
+    match bt with 
+        |Empty-> 0
+        |Node (bt1, _, bt2) -> 1 + (size bt1)+ (size bt2)
+
+
+Recurrence terminale 
+    fonction locale avec accumulateur 
+
+let size (bt:'a btree) : int = 
+    let rec loop( bt: 'a btree) (r: int ) : int =
+        match bt with 
+            |Empty -> r 
+            |Node(bt1, _, bt2) -> 
+                let r' = (loop bt2 r') in
+                    (loop bt 0)
+    in (loop bt 0)
+(mauvaise idee)
+
+recurrence terminale, une appelle recursif ou y a rien a cote
+
+
+let rec mirror (bt : 'a btree) : 'a btree = 
+    match bt with
+    |Empty -> Empty
+    |Node(bt1, x, bt2)->
+        Node((mirror bt2), x , (mirror bt1))
+
+
+fonction de recherche
+type 'a option = None 
+
+search(p:'a -> bool) (bt:'a btree): 'a 
+
+type 'a option = 
+    |None 
+    |Some of 'a
+None : on a rien trouve 
+(Some of 'a ) : on a trouve x 
+
+deux temps 
+-> boucle (locale ) de rehcerche qui donne un 'a option
+-> expression principal qui donne un 'a ou decleche Not_found
+
+
+let search (p:'a -> bool)(bt: 'a btree): 'a =
+    let rec loop (bt: 'a btree) : 'a option = 
+        match bt with
+            |Empty -> None 
+            |Node (bt1, x , bt2) -> (
+                if (p x) then (Some x)
+                else(
+                    match (loop bt1) with
+                        Some x -> (Some x)
+                        |None -> (loop bt 2)
+
+                )
+            )
+    in
+        match (loop bt) with 
+            |None -> raise Not_found
+            |Some x -> x
+
+
+
+
+l'execption avec try () . with  Not_found -> (search p bt2)
+
+
+
+
+

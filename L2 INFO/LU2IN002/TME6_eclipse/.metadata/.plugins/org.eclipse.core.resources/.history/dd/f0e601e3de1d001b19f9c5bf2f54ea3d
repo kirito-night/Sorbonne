@@ -1,0 +1,10 @@
+
+public class Vehicule {
+	public static int num;
+	private double distance_parcourue = 0;
+	public Vehicule(double distance_parcourue) {
+		super();
+		this.distance_parcourue = distance_parcourue;
+	}
+	
+}

@@ -1,0 +1,23 @@
+
+public class Voiture extends AMoteur{
+	protected int nb_place;
+
+	public Voiture(int nb_place) {
+		super();
+		this.nb_place = nb_place;
+	}
+
+	@Override
+	public String toString() {
+		return "Voiture [nb_place=" + nb_place + "]";
+	}
+	
+	public void transporter(int n , int km ) {
+	 if(!super.enPanne())
+		System.out.println("la voiture num "+Vehicule.num+"a transporte "+ n+" personne sur " + km);
+	}
+	else {
+		System.out.println("plus d'essence");
+	}
+	
+}

@@ -1,0 +1,15 @@
+
+public class AMoteur extends Vehicule{
+	protected double capacite_resev;
+	protected double niv_ess = 0;
+	
+	
+	public AMoteur(double distance_parcourue, double capacite_resev, double niv_ess) {
+		super(distance_parcourue);
+		this.capacite_resev = capacite_resev;
+		this.niv_ess = niv_ess;
+	}
+	
+		
+	}
+

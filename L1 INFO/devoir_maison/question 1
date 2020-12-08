@@ -1,0 +1,69 @@
+devoir maison LU1IN002
+
+question 1
+
+1. 
+correcte 
+
+affichage : 42_42
+
+2.
+
+incorrecte:
+le "a" dans le printf est une adresse, hors dans le guillemet du printf nous avons un %d qui represente un entier
+
+3. 
+incorrecte
+
+un pointeur "a" est declarer, hors elle n'est pas initialiser  a une adresse precise, et on effectue une affectation sur le pointeur mais ce pointeur pointe vers NULL
+
+4.
+
+incorrecte 
+
+"*a" est de type int, "&n" est une adresse, *a = &n => incompatible
+
+
+5.
+incorrecte
+
+"a" est une adresse, 42 est un entier, de type incompatible
+
+6.
+correcte
+
+affichage: 42_42
+
+7.
+correcte
+
+affichage: 42_42
+
+8.
+incorrecte
+
+"n" n'est pas initialiser dans la fonctiom
+
+9.
+correcte
+
+(ici le programme va compiller car on a allouer l'espace memeoire pour le pointeur "a" dans le tas, et comme elle n'est pas initialiser par defaut elle vaut 0)
+
+affichage: 42_0 
+
+10. 
+
+correcte
+
+affichage: 42_42
+
+11.
+
+correcte
+
+affichage : 42_42
+
+
+
+
+

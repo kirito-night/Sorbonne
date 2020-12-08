@@ -1,0 +1,3 @@
+pointeur sur fonction 
+declaration 
+ex exemple void  (*fonction) (int ,...)

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.objectaid.uml.cls"
+      label="ObjectAid Class Diagram"
+      version="1.2.4"
+      provider-name="ObjectAid">
+
+   <description url="http://www.objectaid.com">
+      The ObjectAid Class Diagram is optimized for the quick and easy creation of diagrams from existing Java source code and libraries. Code exploration is supported by seamless integration into the Eclipse IDE and many ease-of-use features.
+   </description>
+
+   <copyright>
+      (C) Copyright 2007 by Felix L J Mayer
+   </copyright>
+
+   <license>
+      ObjectAid Class Diagram Editor License
+1. This software is free to download and use.
+2. You may not change the executable or charge for it.
+3. You may not reverse engineer or distribute the source code of this software.
+4. This software is provided &apos;as is&apos; without any warranties.
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.draw2d" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gef" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.resources" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.runtime" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jface" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jface.text" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ltk.core.refactoring" version="3.5.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.osgi" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.swt" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.text" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.console" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.editors" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.ide" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.navigator" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.views" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.workbench" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.help" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.help.ui" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jdt.core" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jdt.ui" version="3.6.0" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="com.objectaid.uml"
+         download-size="1000"
+         install-size="1000"
+         version="1.2.4"
+         unpack="false"/>
+
+   <plugin
+         id="com.objectaid.uml.java"
+         download-size="87"
+         install-size="87"
+         version="1.2.4"
+         unpack="false"/>
+
+   <plugin
+         id="com.objectaid.uml.cls"
+         download-size="960"
+         install-size="960"
+         version="1.2.4"
+         unpack="false"/>
+
+   <plugin
+         id="com.objectaid.uml.cls.java"
+         download-size="9"
+         install-size="9"
+         version="1.2.4"
+         unpack="false"/>
+
+</feature>

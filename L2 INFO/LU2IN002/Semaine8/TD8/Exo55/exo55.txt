@@ -1,0 +1,13 @@
+1) 
+la methode remplirReservoir(Vehicule v)() de la classe StationService n'est pas bien 
+programmer , car si on avait un grand nombre de vehicule different, on devrait ajouter 
+autant de if() qu'il ya de sous classe de Vehicule
+dans l'ideal on ne devrait pas modifier la method remplirReservoire() a chaque fois qu'une 
+nouvelle classe Vehicule est definie.
+
+remplirReservoir() s'applique uniquement aux vehicules qui ont un moteur
+
+public abstract class VehiculeMoteur extends Vehicule{
+    public abstract void fareLePlein();
+    
+}

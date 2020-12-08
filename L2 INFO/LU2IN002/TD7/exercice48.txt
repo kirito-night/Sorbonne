@@ -1,0 +1,48 @@
+1)
+la class circle herite x, y de la class Shape, methode toString() redefinie dans Shape
+
+
+
+2)
+car il  y a une methode  abstract dans la class Shape
+
+3)
+public double Surface(){
+   return  Math.PI * radius * radius;
+}
+
+public String toString(){
+    return super.toString() + "Rayon : " + radius + " surface : " +surface(); 
+}
+
+4)
+public class Rectangle extends Shape {
+    public Rectangle(double x , double y){
+        super(x,y);
+        
+    }
+    public double Surface(){
+        return x *y;
+    }
+    public String toString(){
+        return super.toString(). + "surface : " + Surface()
+    }
+}
+
+5)
+public class MainShape{
+    public static void main(String[] args){
+        Shape [] tab ;
+        tab = new Shape[10];
+        for(int i = 0; i< 5 ; i+=2){
+            tab[i] = new Circle(i,i);
+            tab[i+1]= new Rectangle(i,i);
+
+        }
+        double atot = 0;
+        for(Shape s : tab){
+            atot += s.Surface();
+        }
+
+    
+}

@@ -1,0 +1,19 @@
+
+public class TestAnimal {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	Animal p1 = new Poule(1, 2);
+	Animal p2 = new Poule(4, 8);
+	Animal p3 = new Poule(9, 6);
+	p1.afficher();
+	p2.afficher();
+	p3.afficher();
+	p1.move(2, 5);
+	p1.afficher();
+	p1.distance(p2);
+	
+
+	}
+
+}

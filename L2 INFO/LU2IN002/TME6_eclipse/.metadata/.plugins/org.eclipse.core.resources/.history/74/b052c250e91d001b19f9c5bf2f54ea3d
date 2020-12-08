@@ -1,0 +1,16 @@
+
+public class Voiture {
+	protected int nb_place;
+
+	public Voiture(int nb_place) {
+		super();
+		this.nb_place = nb_place;
+	}
+
+	@Override
+	public String toString() {
+		return "Voiture [nb_place=" + nb_place + "]";
+	}
+	
+	
+}

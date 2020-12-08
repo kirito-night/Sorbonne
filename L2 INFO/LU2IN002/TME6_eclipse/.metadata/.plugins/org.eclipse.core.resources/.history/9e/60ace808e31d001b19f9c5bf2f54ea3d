@@ -1,0 +1,21 @@
+
+public class Vehicule {
+	public static int num;
+	private double distance_parcourue 
+	
+	
+	public Vehicule() {
+		
+		this.distance_parcourue = 0;
+		num++;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Vehicule [distance_parcourue=" + distance_parcourue + "]";
+	}
+	
+	
+	
+}

@@ -1,0 +1,12 @@
+
+public class TestVehicule {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Vehicule v1 = new Velo(3);
+		System.out.println(v1.toString());
+		v1.transporter("ici", "laba");
+		v1.rouler(100);
+	}
+
+}

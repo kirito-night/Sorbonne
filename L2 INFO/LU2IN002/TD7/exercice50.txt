@@ -1,0 +1,103 @@
+figure 2D
+1)
+une methode abstraite est une methode dont on ne precise que la signature
+et qui sera implemente dans les calsses filles(sinon la classe fille est abstraite)
+
+toutes classes contenant une methodes abstraites est forcement abstraite
+
+une classe concrete doit implementer toutes methodes abstraites des classes parent
+
+en ce qui concerne les classes donnees 
+-Figure est une classe abstraite  
+    -surface() est une methode abstraite de Figure
+
+-Figure2D est une classe abstraite
+    -perimetre() est une methode abstraite de Figure2D
+
+
+
+2) 
+public abstract class Figure{
+    public abstract double Surface();
+    public String toString(){
+        return "c'est une figure";
+
+    }
+}
+public abstract class Figure2D extends Figure{
+        public abstract double perimetre();
+
+}
+
+public class Rectangle extends Figure2D{
+    private double longueur , largeur;
+    public Rectangle (double l1,double l2){
+        super();
+        longueur = l1; largeur = l2;
+
+    }
+    public double surface(){ 
+        return longueur *largeur;
+
+    }
+    public double perimetre(){
+        return 2*(longueur +largeur);
+    }
+    public String toString(){
+        return "Rectangle : " +longueur +"," +largeur;
+    }
+}
+
+public class Carre extends Rectangle{
+    public Carre (double c){
+        super(c,c);
+    }
+}
+
+public class Ellipse extends Figure2D{
+    private double a,b;
+    public Ellipse (double a , double b){
+        super();
+        this.a = a ; this.b = b;
+    }
+    public double surface(){
+        return Math.PI * a * b ;
+    }
+
+    public double perimetre(){
+        return 2*Math.PI * Math.sqrt(((a*a)+(b*b))/2);
+
+    }
+    public String to String(){
+        return "Ellipse : " + a+ " , " +b;
+
+    }
+}
+public class Cercle extends Ellipse{
+    public cercle(double r){
+        super(r,r);
+    }
+}
+
+
+3)
+pour pouvoir afficher les surfaces et les perimetres , le tableau
+doit etre de type Figure2D
+
+public class TestFigure{
+    public stati void main(String[] args){
+        Figure2D[] tab = new Figure2D[4];
+        tab[0]= new Rectangle(10,5);
+        tab[1] = new Carre(2);
+        tab[2] = new Ellipse(3,7);
+        tab[3] = new Cercle(4);
+
+    for(Figure2D f :tab ){
+        System.out.print(f.toString());
+        System.out.print("surface =" +f.surface());
+        System.out.print("perimetre =" +f.perimetre());
+
+    }
+
+    }
+}

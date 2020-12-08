@@ -1,0 +1,8 @@
+Exercice 7 :chien mammifere
+1)
+ligne  05: ok
+ligne 06 : ok
+ligne  07 : ok
+ligne  08 : non
+ligne  09 : ok
+ligne  10 : non a la compilation pas d'erreur a la compilation mais il ya une erreur a l'execution

@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+/home/kirito/Documents/L2 INFO/LU2IN002/.metadata/.plugins/org.eclipse.jdt.core
+646308851.index
+241978105.index

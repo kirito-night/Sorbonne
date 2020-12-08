@@ -1,0 +1,21 @@
+
+public class AMoteur extends Vehicule{
+	protected double capacite;
+	protected double ess = 0;
+	
+	
+	public AMoteur() {
+		super()
+		this.capacite = capacite;
+		this.ess = ess;
+	}
+
+
+	@Override
+	public String toString() {
+		return super.toString() + "AMoteur [capacite=" + capacite + ", ess=" + ess + "]";
+	}
+	
+		
+	}
+

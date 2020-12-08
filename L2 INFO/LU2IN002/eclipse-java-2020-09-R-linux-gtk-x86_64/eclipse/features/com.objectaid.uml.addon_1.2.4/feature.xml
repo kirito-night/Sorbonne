@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.objectaid.uml.addon"
+      label="ObjectAid Diagram Add-On (License Required)"
+      version="1.2.4"
+      provider-name="ObjectAid">
+
+   <description url="http://www.objectaid.com">
+      The ObjectAid UML Explorer is optimized for the quick and easy creation of UML class diagrams from existing Java source code and libraries. Code exploration is supported by seamless integration into the Eclipse IDE and many ease-of-use features
+   </description>
+
+   <copyright>
+      (C) Copyright 2013 by Felix L J Mayer
+   </copyright>
+
+   <license>
+      ObjectAid Diagram Add-On License
+1. You must have a valid license to use this software.
+2. A evaluation license allows this software to be used on one computer at a time for the duration 
+of the evaluation period.
+3. A user license can be used by the operating system user you select on one computer at a time. 
+You are only able to use such a license if the operating system user you specified is logged in. 
+You can install the license on multiple computers, but you cannot use it on two computers at the 
+same time.
+4. A node-locked license can be used by any user on the computer to which it is locked through
+the computer's network MAC address. It can only be used by one person at a time.
+5. A license is valid for a particular software release and includes all updates for that release. 
+For example, a license for release 1.0 is valid for all 1.0.x versions. ObjectAid LLC reserves the 
+right to charge for the upgrade of existing licenses to the new release.
+6. While purchased licenses generally do not expire, for a license in online mode a lease is
+obtained from the ObjectAid license server which is renewed automatically on a regular basis. 
+A license in offline mode does not need to be renewed in this way, but the operating system user 
+name or MAC address can only be set 3 times.
+7. A purchased license can become a user or node-locked license at any time; it can also be 
+switched between online and offline mode.
+8. Purchased licenses are generally not refundable. If you are not sure, please try an evaluation license.
+9. You may not reverse engineer or distribute the source code of this application.
+   </license>
+
+   <requires>
+      <import plugin="org.apache.batik.bridge" version="1.6.0" match="greaterOrEqual"/>
+      <import plugin="org.apache.batik.css" version="1.6.0" match="greaterOrEqual"/>
+      <import plugin="org.apache.batik.dom" version="1.6.0" match="greaterOrEqual"/>
+      <import plugin="org.apache.batik.dom.svg" version="1.6.0" match="greaterOrEqual"/>
+      <import plugin="org.apache.batik.ext.awt" version="1.6.0" match="greaterOrEqual"/>
+      <import plugin="org.apache.batik.pdf" version="1.6.0" match="greaterOrEqual"/>
+      <import plugin="org.apache.batik.svggen" version="1.6.0" match="greaterOrEqual"/>
+      <import plugin="org.apache.batik.transcoder" version="1.6.0" match="greaterOrEqual"/>
+      <import plugin="org.apache.batik.util" version="1.6.0" match="greaterOrEqual"/>
+      <import plugin="org.apache.batik.xml" version="1.6.0" match="greaterOrEqual"/>
+      <import plugin="org.w3c.dom.svg" version="1.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.console" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.workbench" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.runtime" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.resources" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.draw2d" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gef" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.ide" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.junit"/>
+      <import plugin="org.eclipse.jdt.core" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jdt.ui" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jface" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jface.text" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="com.objectaid.uml.java"/>
+      <import plugin="org.eclipse.ltk.core.refactoring" version="3.5.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.osgi" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.swt" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.text" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.editors" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.navigator" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.views" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.help" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.help.ui" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="com.objectaid.uml.cls"/>
+      <import plugin="org.eclipse.equinox.common" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.equinox.registry" version="3.5.0" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="com.objectaid.uml.addon"
+         download-size="306"
+         install-size="306"
+         version="1.2.4"
+         unpack="false"/>
+
+   <plugin
+         id="com.objectaid.uml.addon.java"
+         download-size="14"
+         install-size="14"
+         version="1.2.4"
+         unpack="false"/>
+
+   <plugin
+         id="com.objectaid.uml"
+         download-size="0"
+         install-size="0"
+         version="1.2.4"
+         unpack="false"/>
+
+   <plugin
+         id="com.objectaid.uml.addon.cls"
+         download-size="0"
+         install-size="0"
+         version="1.2.4"
+         unpack="false"/>
+
+</feature>
