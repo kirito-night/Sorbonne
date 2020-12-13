@@ -74,7 +74,7 @@ class Automate(AutomateBase):
         # stateList : list[State]
         stateList = auto.getListInitialStates()
         # currentList : list[State]
-        currentList = stateList
+        currentList = auto.getListInitialStates()
         # nextList : list[State]
         nextList = []
         # end : bool
@@ -108,7 +108,7 @@ class Automate(AutomateBase):
         if len(currentList) > 1:
             return False
         # stateList : list[State]
-        stateList = currentList
+        stateList = auto.getListInitialStates()
         # nextList : list[State]
         nextList = []
         # end : bool
@@ -149,7 +149,7 @@ class Automate(AutomateBase):
         # currentList : list[State]
         currentList = auto_new.getListInitialStates()
         # stateList : list[State]
-        stateList = currentList
+        stateList = auto_new.getListInitialStates()
         # nextList : list[State]
         nextList = []
         # end : bool
@@ -177,36 +177,79 @@ class Automate(AutomateBase):
         """ Automate  -> Automate
         rend l'automate déterminisé d'auto
         """
-        if(estDeterministe(auto)):
-            return auto.copy.deepcopy()
-        # auto_new : Automate 
-        auto_new = auto.copy.deepcopy()
+        if(Automate.estDeterministe(auto)):
+            return copy.deepcopy(auto)
+        def isFinal(listState):
+            """ list[State] -> bool
+            Pour voir si l'etat comprenant listState est final
+            """
+            for state in listState:
+                if state in auto.getListFinalStates():
+                    return True
+            return False
+        # declaration des variables
         # currentList : list[State]
-        currentList = auto_new.getListInitialStates()
-        # stateList : list[State]
-        stateList = currentList
-        # nextList : list[State]
-        nextList = []
-        # end : bool
-        end = False
-        # alphabet
-        alphabet = []
+        currentList = auto.getListInitialStates()
+        # stateList : list[list[[State]]]
+        stateListList = []
         # newStateList : list[State]
         newStateList = []
+        # dictListStateToState : dict{list[State] : State}
+        dictListStateToState = dict()
+        # nextList : list[State]
+        nextList = []
+        # alphabet
+        alphabet = []
         # newTransitionList : list[transition]
         newTransitionList = []
-        while(not end):
-            # transitionList : list[transition]
-            transitionList = auto.getListTransitionsFrom(currentList)
-            for transition in transitionList:
-                if transition.etiquette not in alphabet:
-                    alphabet.append(transition.etiquette)
-                if transition.stateDest not in nextList:
-                    nextList.append(transition.stateDest)
-                # auto.succ(stateSrc, )
-            if stateList != auto.listStates:
-                end = True
-        # return auto_new
+        # preparation pour le premier etat
+        stateListList.append(currentList)
+        initialState = State(0, True, isFinal(currentList))
+        # enregistrement pour la relation entre une liste d'etat et un etat correspondante
+        dictListStateToState[frozenset(set(currentList))] = initialState
+        newStateList.append(initialState)
+        # recuperer toutes l'alphabet
+        for transition in auto.listTransitions:
+            alphabet.append(transition.etiquette)
+        # Si on a des ajouts, on continue
+        # Sinon, le nouvel automate est fait
+        entrer = 0
+        sortir = 1
+        compte = 1
+        while(entrer != sortir):
+            entrer = sortir
+            # iteration des lettre
+            for lettre in alphabet:
+                # iteration des etats existants
+                for listOfStates in stateListList[:]:
+                    currentList = listOfStates
+                    nextList = []
+                    # Si on n'est pas bloque
+                    while(currentList != nextList):
+                        nextList = auto.succ(currentList, lettre)
+                        newTransition = Transition(dictListStateToState[frozenset(set(listOfStates))], lettre, dictListStateToState[frozenset(set(listOfStates))])
+                        if currentList == nextList and  newTransition not in newTransitionList:
+                            newTransitionList.append(newTransition)
+                            sortir += 1
+                        # ajout de nouvel etat et nouvelle transition s'ils n'existent pas
+                        if nextList not in stateListList:
+                            stateListList.append(nextList)
+                            newState = State(compte ,False, isFinal(nextList))
+                            compte += 1
+                            sortir += 1
+                            dictListStateToState[frozenset(set(nextList))] = newState
+                            newStateList.append(newState)
+                            newTransition = Transition(dictListStateToState[frozenset(set(listOfStates))], lettre, newState)
+                            newTransitionList.append(newTransition)
+                            # passe a la suivant
+                            currentList = nextList
+                        # S'ils existent, on etablit la transition et change la lettre 
+                        else:
+                            newTransition = Transition(dictListStateToState[frozenset(set(listOfStates))], lettre, dictListStateToState[frozenset(set(nextList))])
+                            if newTransition not in newTransitionList:
+                                newTransitionList.append(newTransition)
+                            break
+        return Automate(newTransitionList)
         
     @staticmethod
     def complementaire(auto,alphabet):

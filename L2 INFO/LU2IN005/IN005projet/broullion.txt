@@ -1,0 +1,116 @@
+# # transitionList : list[transition]
+            # transitionList = auto.getListTransitionsFrom(currentList)
+            # for transition in transitionList:
+            #     if transition.etiquette not in alphabet:
+            #         alphabet.append(transition.etiquette)
+            #     if transition.stateDest not in nextList:
+            #         nextList.append(transition.stateDest)
+            #     # auto.succ(stateSrc, )
+            # if stateList != auto.listStates:
+            #     end = True
+        # # obtenir l'ensemble de parties
+        # stateList = auto.listStates
+        # basicStateList = []
+        # for state in stateList:
+        #     basicStateList.append({state})
+        # stateSetList = basicStateList
+        # currentSetList = basicStateList
+        # nextSetList = []
+        # end = False
+        # while(not end):
+        #     nextSetList = []
+        #     for part in currentSetList:
+        #         for basicPart in basicStateList:
+        #             if basicPart <= part:
+        #                 continue
+        #             nextSetList.append(part | basicPart)
+        #     for stateL in nextSetList:
+        #         if stateL not in stateSetList:
+        #             stateSetList.append(stateL)
+        #     if currentSetList == nextSetList:
+        #         end = True
+        #     currentSetList = nextSetList
+        # assert(len(stateSetList) == 2**len(stateList)-1)
+        # # # obtenir l'ensemble de transition
+        # alphabet = set()
+        # for transition in auto.listTransitions:
+        #     alphabet.add(transition.etiquette)
+        # newListTransitions = []
+        # newListInitialStates = []
+        # newListFinalStates = []
+        # for stateSetX in stateSetList:
+        #     if stateSetX & set(auto.getListFinalStates()) != set():
+        #         newListFinalStates.append(stateSetX)
+        # newListStates = []
+        # matchIwithCpt = []
+        # matchIwithCpt.append((-1,-1))
+        # print(matchIwithCpt)
+        # newSetInitialStates = set()
+        # for element in auto.getListInitialStates():
+        #     newSetInitialStates.add(element)
+        # newSetFinalStates = set()
+        # for element in auto.getListFinalStates():
+        #     newSetFinalStates.add(element)
+        # for i in range(len(stateSetList)):
+        #     cpt = 0
+        #     # stateSetList[i] == stateSetX
+        #     for lettre in alphabet:
+        #         srcDest = []
+        #         h = "here"
+        #         try:
+        #             destIndex = stateSetList.index(set(auto.succ(list(stateSetList[i]), lettre)))
+        #             if destIndex != -1:
+        #                 if stateSetList[i] == newSetInitialStates and stateSetList[i] & newSetFinalStates != set():
+        #                     initial = True
+        #                     final = True
+        #                 elif stateSetList[i] == newSetInitialStates:
+        #                     initial = True
+        #                     final = True
+        #                 elif stateSetList[i] & newSetFinalStates != set():
+        #                     initial = False
+        #                     final = True
+        #                 else:
+        #                     initial = False
+        #                     final = False
+        #                 existe = False
+        #                 for a,b in matchIwithCpt:
+        #                     if a == i:
+        #                         existe = True
+        #                 if existe:
+        #                     srcDest.append(newListStates.index(b))
+        #                 else:
+        #                     srcDest.append((State(cpt, initial, final)))
+        #                     newListStates.append(srcDest[0])
+        #                     matchIwithCpt.append((i, cpt))
+        #                     cpt += 1
+        #                 # pour etat d'arrivee
+        #                 if stateSetList[destIndex] == newSetInitialStates and stateSetList[destIndex] & newSetFinalStates != set():
+        #                     initial = True
+        #                     final = True
+        #                 elif stateSetList[destIndex] == newSetInitialStates:
+        #                     initial = True
+        #                     final = True
+        #                 elif stateSetList[destIndex] & newSetFinalStates != set():
+        #                     initial = False
+        #                     final = True
+        #                 else:
+        #                     initial = False
+        #                     final = False
+        #                 existe = False
+        #                 for a,b in matchIwithCpt:
+        #                     if a == i:
+        #                         existe = True
+        #                 if existe:
+        #                         srcDest.append(newListStates.index(b))
+        #                 else:
+        #                     srcDest.append(State(cpt, initial, final))
+        #                     newListStates.append(srcDest[1])
+        #                     matchIwithCpt.append((destIndex, cpt))
+        #                     cpt += 1
+        #             if srcDest != []:
+        #                 newListTransitions.append(Transition(srcDest[0], lettre, srcDest[1]))
+        #         except ValueError:
+        #             continue
+        # if auto.label == None:
+        #     return Automate(newListTransitions, newListStates)
+        # return Automate(newListTransitions, newListStates, label = "det("+auto.label+")")
