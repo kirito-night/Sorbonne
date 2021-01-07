@@ -1,0 +1,35 @@
+question de ce td, l'utilite du champ copie, l'utilisation des pointeurs sur fonctionm 
+l'allocation du memoire 
+des seg fault 
+
+
+
+exercice 1 
+question 1 
+on reutilise
+
+
+question 2
+typedef struct _noeud_binaire *PNoeudBinaire;
+typedef struct _noeud_binaire{
+    void *data
+    PNoeudBinaire gauche;
+    PNoeudBinaire droit;
+}NoeudBinaire
+
+typedef struct _arbre_binaire *PArbreBinaire;
+typedef struct _arbre_binaire{
+    char copie;
+    PNoeudBinaire racine;
+    void*(*dupliquer)(const void *src, void *dst);
+    void(*copier)
+    void(*detruire)
+    void(*afficher)
+    int(*comaparer)
+    int(*ecrire)
+    void*(*lire)(FILE *f)
+
+}_arbre_binaire
+
+
+question 3
