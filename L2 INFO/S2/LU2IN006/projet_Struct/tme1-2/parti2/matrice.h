@@ -13,5 +13,7 @@ void afficher_matrice(int **T, int n);
 int all_diff_1(int **Mat, int n);
 int all_diff_2(int **Mat, int n , int V);
 int **produit_matrice(int **mat1, int ** mat2 , int n);
-
+void remplir_matrice_trisup(int **T, int n, int V);
+void remplir_matrice_triinf(int **T, int n, int V);
+int **produit_matrice_2(int **mat1, int **mat2,int n);
 #endif

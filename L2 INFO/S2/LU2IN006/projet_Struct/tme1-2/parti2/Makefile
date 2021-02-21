@@ -1,6 +1,12 @@
-EX = tab matrice
+EX = tab matrice produit
 all : $(EX)
 
+produit: testProduitMatrice.o matrice.o
+	gcc testProduitMatrice.o matrice.o -o produit -Wall
+
+testProduitMatrice.o : testProduitMatrice.c matrice.h
+	gcc -c testProduitMatrice.c
+	
 matrice: testMatrice.o matrice.o
 	gcc testMatrice.o matrice.o -o matrice -Wall
 

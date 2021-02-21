@@ -37,7 +37,7 @@ int alloue_matrice_tri(int *** T, int n, int m){
     int i;
     
     for(i = 0 ; i< n; i++ ){
-         (*T)[i]= (int *)malloc(sizeof(int)*(i+1));
+         (*T)[i]= (int *)malloc(sizeof(int)*(i+1)); //n-i pour les matrices triangulaire superieur
          if((*T)[i] == NULL){
              return 0;
          }
