@@ -109,11 +109,11 @@ void suppression_ouvrage(Biblio * b , int num,  char * titre,  char* auteur){
         return;
     }
     liste= liste->suiv;
-    while (liste){
-        if(strcmp(liste->auteur, auteur)==0 && liste->num == num && strcmp(liste->titre, titre)==0){
-            Livre *tmp = liste->suiv;
-            liberer_livre(liste);
-            liste=tmp;
+    while (liste->suiv){
+        if(strcmp(liste->suiv->auteur, auteur)==0 && liste->suiv->num == num && strcmp(liste->suiv->titre, titre)==0){
+            Livre *tmp = liste->suiv->suiv;
+            liberer_livre(liste->suiv);
+            liste->suiv=tmp;
             printf("l'ouvrage est supprimer");
             return;
         }
@@ -124,7 +124,7 @@ void suppression_ouvrage(Biblio * b , int num,  char * titre,  char* auteur){
 }
 
 
-Biblio *fusion_biblio_1(Biblio *b1, Biblio *b2){
+/*Biblio *fusion_biblio_1(Biblio *b1, Biblio *b2){
     Livre *liste = b1->L;
     while(liste->suiv){
         liste = liste->suiv;
@@ -132,9 +132,15 @@ Biblio *fusion_biblio_1(Biblio *b1, Biblio *b2){
     liste->suiv = b2->L;
     free(b2);
     return b1;
-}
+}*/
 
 Biblio *fusion_biblio_2(Biblio *b1, Biblio *b2){
+     if(b2 == NULL){
+        return b1;
+    }
+     if(b1 == NULL){
+        return b2;
+    }
     Livre * liste = b1->L;
     while(liste){
         inserer_en_tete(b2,liste->num,liste->titre,liste->auteur);
@@ -142,6 +148,7 @@ Biblio *fusion_biblio_2(Biblio *b1, Biblio *b2){
 
     }
     liberer_biblio(b1);
+    printf("fusion fait !");
     return b2;
 
 }
