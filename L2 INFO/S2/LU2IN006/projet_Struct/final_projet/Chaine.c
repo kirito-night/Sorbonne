@@ -6,7 +6,7 @@
 #include<math.h>
 #include"SVGwriter.h"
 
-void libererChaine(Chaines *c){
+void libererChaine(Chaines *c){ //fonction de liberation de la chaine tout simple 
     CellChaine *tmp_chain = c->chaines;
     while(tmp_chain){
         CellPoint *tmp_pnt = tmp_chain->points;
@@ -23,10 +23,11 @@ void libererChaine(Chaines *c){
 }
 
 Chaines* lectureChaines(FILE *f){
+    //fonction de lecture de la chaine 
 
     Chaines *res = (Chaines *)malloc(sizeof(Chaines));
     char buffer[256];
-    char tmp[50]; //on s'en fou de lui 
+    char tmp[50]; // juste un tableau pour le stockage 
     int Nbchain;
     int Gamma;
     fgets(buffer, 256,f);
@@ -37,23 +38,24 @@ Chaines* lectureChaines(FILE *f){
     res->nbChaines =Nbchain;
     res->gamma=Gamma;
     CellChaine *liste_cha = NULL;
-    for(int j =  0 ;  j < res->nbChaines ; j++){
+    for(int j =  0 ;  j < res->nbChaines ; j++){ //parcours du fichier 
         //fgets(buffer, 256,f);
         //printf("%s \n" , buffer);
         CellChaine *cha = (CellChaine *)malloc(sizeof(CellChaine));
         int num;
         int nbPoints;
-        fscanf(f,"%d %d ",&num,&nbPoints);
-        printf("%d %d \n",num,nbPoints);
+        fscanf(f,"%d %d ",&num,&nbPoints); //utilisation de fscanf pour avancer dans le fichier 
+        //printf("%d %d \n",num,nbPoints);
         cha->numero = num;
         int i;
         CellPoint *liste_point = NULL;
         for(i = 0 ; i < nbPoints; i++){
             CellPoint *point = (CellPoint*)malloc(sizeof(CellPoint));
             float x, y;
-            int test = fscanf(f,"%f %f ",&x,&y);
-
-            printf("%f %f  %d \n",x,y , test);
+            //int test = fscanf(f,"%f %f ",&x,&y);
+            fscanf(f,"%f %f ",&x,&y);
+            //pour debug
+            //printf("%f %f  %d \n",x,y , test); 
             point->x=x;
             point->y = y;
             point->suiv = liste_point;
@@ -74,6 +76,7 @@ Chaines* lectureChaines(FILE *f){
 
 
 void ecrireChaines(Chaines *C, FILE *f){
+    //fonction d'ecriture de la chaine dans un fichier
     fprintf(f,"NbChain : %d \nGamma : %d\n",C->nbChaines,C->gamma);
     int i ;
     CellChaine *liste_chaine = C->chaines;
@@ -108,7 +111,7 @@ void ecrireChaines(Chaines *C, FILE *f){
 
 
 double longueurChaine(CellChaine *c)
-{
+{ //calcule la longueur d'une chaine 
 
 
     if(c==NULL)
@@ -131,12 +134,12 @@ double longueurChaine(CellChaine *c)
 
 
 double longueurTotale(Chaines* C)  
-{
+{//compte la longuer totale 
     if(C==NULL)
     {
         return 0;
     }
-    double res = 0;
+    double res = 0.0;
     CellChaine* temp = C->chaines;
     
     while(temp!=NULL){
@@ -148,7 +151,7 @@ double longueurTotale(Chaines* C)
 }
 
 int comptePointsTotal(Chaines* C)
-{
+{ //compte le nombre de points totale de la chaine 
 
     if(C==NULL){
         return 0;
@@ -170,7 +173,7 @@ int comptePointsTotal(Chaines* C)
 }
 
 
-void afficheChainesSVG(Chaines *C, char* nomInstance){
+void afficheChainesSVG(Chaines *C, char* nomInstance){ //fonction d'affichage fournit 
     //int i;
     double maxx=0,maxy=0,minx=1e6,miny=1e6;
     CellChaine *ccour;

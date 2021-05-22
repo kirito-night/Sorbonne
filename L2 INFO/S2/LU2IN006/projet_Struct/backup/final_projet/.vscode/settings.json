@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "graphe.h": "c",
+        "chaine.h": "c"
+    }
+}

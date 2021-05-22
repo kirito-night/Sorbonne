@@ -1,0 +1,7 @@
+temps_cpu pour reconstitueReseauListe : 6433417.000000
+temps_cpu pour reconstitueReseauArbre : 47020.000000
+temps_cpu pour reconstitueReseauHachage avec table de hachage de taille 5 : 1080554.000000
+temps_cpu pour reconstitueReseauHachage avec table de hachage de taille 10 : 1164992.000000
+temps_cpu pour reconstitueReseauHachage avec table de hachage de taille 100 : 1187306.000000
+temps_cpu pour reconstitueReseauHachage avec table de hachage de taille 1000 : 1092098.000000
+temps_cpu pour reconstitueReseauHachage avec table de hachage de taille 10000 : 1135079.000000

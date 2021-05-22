@@ -14,4 +14,6 @@ typedef struct arbreQuat{
     struct arbreQuat *ne;   /* Sous-arbre nord-est, pour x >= xc et y >= yc */
 } ArbreQuat;
 
+
+
 #endif

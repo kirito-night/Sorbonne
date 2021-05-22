@@ -57,6 +57,7 @@ int fonctionHachage(int cle, int m);
 Noeud* rechercheCreeNoeudHachage(Reseau* R, TableHachage *H, double x ,double y);
 CellNoeud * insererNoeud(CellNoeud * liste_nd, Noeud *insere);
 Reseau * reconstitueReseauHachage(Chaines *C, int M);
+void libererTable(TableHachage* tabH);
 
 
 
@@ -69,7 +70,7 @@ ArbreQuat* creerArbreQuat(double xc, double yc, double coteX,double coteY);
 void insererNoeudArbre(Noeud *n, ArbreQuat** a, ArbreQuat* parent);
 Noeud* rechercheCreeNoeudArbre(Reseau* R, ArbreQuat** a, ArbreQuat* parent, double x, double y);
 Reseau * reconstitueReseauArbre(Chaines *C);
-
+void libererArbreQuat(ArbreQuat* a);
 
 Noeud* creerNoeud(int num, double x, double y);
 #endif

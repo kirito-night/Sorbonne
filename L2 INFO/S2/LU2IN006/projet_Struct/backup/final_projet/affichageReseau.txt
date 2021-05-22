@@ -1,0 +1,27 @@
+void afficheReseauSVG(Reseau *R, char* nomInstance){
+    CellNoeud *courN,*courv;
+    SVGwriter svg;
+    double maxx=0,maxy=0,minx=1e6,miny=1e6;
+
+    courN=R->noeuds;
+    while (courN!=NULL){
+        if (maxx<courN->nd->x) maxx=courN->nd->x;
+        if (maxy<courN->nd->y) maxy=courN->nd->y;
+        if (minx>courN->nd->x) minx=courN->nd->x;
+        if (miny>courN->nd->y) miny=courN->nd->y;
+        courN=courN->suiv;
+    }
+    SVGinit(&svg,nomInstance,500,500);
+    courN=R->noeuds;
+    while (courN!=NULL){
+        SVGpoint(&svg,500*(courN->nd->x-minx)/(maxx-minx),500*(courN->nd->y-miny)/(maxy-miny));
+        courv=courN->nd->voisins;
+        while (courv!=NULL){
+            if (courv->nd->num<courN->nd->num)
+                SVGline(&svg,500*(courv->nd->x-minx)/(maxx-minx),500*(courv->nd->y-miny)/(maxy-miny),500*(courN->nd->x-minx)/(maxx-minx),500*(courN->nd->y-miny)/(maxy-miny));
+            courv=courv->suiv;
+        }
+        courN=courN->suiv;
+    }
+    SVGfinalize(&svg);
+}
