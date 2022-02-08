@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enregistrement</title>
+    <link rel="stylesheet" href="enregistrement.css">
+</head>
+
+<body>
+
+    <h1 id="en_title">Enregistrement</h1>
+    <form action="/login" method="POST">
+        <div id="laelnometprenom">
+            <div id="labelnom">
+                <label for="Nom">Nom </label>
+            </div>
+            <div id="labelprenom">
+                <label for="Prenom">Prenom </label>
+            </div>
+        </div>
+        <div id="inputnometprenom">
+            <div id="Nom">
+                <input type="text" name="Nom">
+            </div>
+            <div id="Prenom">
+                <input type="text" name="Prenom">
+            </div>
+        </div>
+
+        <label for="login">Login </label>
+        <input type="text" id="login" name="login">
+
+        <br>
+        <label for="password">Password </label>
+        <input type="password" id="password" name="password">
+
+        <br>
+        <label for="password">Retapez </label>
+        <input type="password" id="confirmpassword" name="confirmpassword">
+
+        <br>
+        <button type="submit" id="connexion" class="btn">Connexion</button>
+
+        <a href="main.html">
+            <button type="button" id="annuler" class="btn">Annuler</button>
+        </a>
+    </form>
+
+</body>
+
+</html>

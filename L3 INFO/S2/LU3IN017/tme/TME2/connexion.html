@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="connexion.css" />
+</head>
+
+<body>
+    <h1 id="co_title">Ouvrir une session</h1>
+    <form action="/login" method="POST">
+        <label for="login">Login </label>
+        <input type="text" id="login" name="login">
+
+        <label for="password">Password </label>
+        <input type="password" id="password" name="password">
+
+        <button type="submit" id="connexion" class="btn">Connexion</button>
+        
+        <a href="main.html">
+            <button type="button" id="annuler" class="btn">Annuler</button>
+        </a>
+    </form>
+</body>
+
+</html>

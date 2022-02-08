@@ -1,0 +1,186 @@
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: rgb(118, 236, 171)
+}
+
+#logo {
+    height: 100px;
+    float: left;
+}
+
+header {
+    padding: 20px;
+    width: 100%+20px;
+    text-align: center;
+    background-color: rgb(177, 14, 199);
+    margin: -10px -10px 0 -10px;
+}
+
+header div {
+    display: inline-block;
+}
+
+#divlogo {
+    width: 10%;
+}
+
+#search {
+    width: 70%;
+    position: relative;
+    top: -35px;
+}
+
+#rbar {
+    width: 60%;
+    height: 30px;
+}
+
+#rbutton {
+    width: 10%;
+    font-size: 15px;
+    color: rgb(72, 11, 224);
+    background-color: rgb(189, 224, 60);
+    border-color: aqua;
+    border-radius: 10px;
+}
+
+#search div {
+    width: 70%;
+    text-align: left;
+    margin-top: 10px;
+}
+
+#search label {
+    margin: 0 10px;
+}
+
+#zoneleft {
+    width: 20%;
+    float: left;
+    background-color: rgb(241, 241, 9);
+    min-height: 860px;
+    padding: 0 20px;
+}
+
+#zoneright {
+    width: 100%;
+}
+
+#zoneNewC {
+    background-color: rgb(161, 21, 21);
+    margin-left: 25%;
+    width: 70%;
+    min-height: 80px;
+    padding: 20px;
+}
+
+#zoneNewC textarea {
+    resize: none;
+}
+
+#zoneNewC button {
+    width: 10%;
+    height: 70px;
+    position: relative;
+    top: -33px;
+    left: 5px;
+}
+
+#zoneC {
+    background-color: rgb(95, 231, 41);
+    width: 70%;
+    margin-left: 25%;
+    min-height: 800px;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+#profile {
+    min-width: 10%;
+    float: right;
+}
+
+#profile a button {
+    font-size: 15px;
+}
+
+li {
+    list-style: none !important;
+    color: #FFF;
+    padding: 10px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#profile ul {
+    background-color: #64abfb;
+    padding: 0;
+    margin: 0;
+}
+
+#profile ul li {
+    list-style: none;
+    line-height: 44px;
+    float: left;
+    background-color: #64abfb;
+}
+
+#profile ul li a {
+    color: #FFF;
+    padding: 10px;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+#profile ul li a:hover {
+    border-bottom: 3px #FFF solid;
+}
+
+#profile ul li ul {
+    display: none;
+}
+
+#profile ul li:hover ul {
+    z-index: 99999;
+    display: list-item !important;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: -10px;
+}
+
+#profile ul li:hover ul li {
+    float: none;
+}
+
+.commentaire {
+    border: 1px solid #333;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.commentaire img {
+    width: 80px;
+    float: left;
+}
+
+.commentaire h4 {
+    width: 50%;
+    margin-left: 15%;
+}
+
+.commentaire date {
+    width: 20%;
+    float: right;
+    font-style: italic;
+    position: relative;
+    top: -40px;
+}
+
+.commentaire p {
+    width: 80%;
+    margin-left: 15%;
+    background-color: #fff;
+}

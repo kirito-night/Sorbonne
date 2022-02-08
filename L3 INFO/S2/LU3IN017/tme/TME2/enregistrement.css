@@ -1,0 +1,54 @@
+body {
+    text-align: center;
+}
+
+h1 {
+    color: #555;
+}
+
+form {
+    border: 2px solid #111;
+    margin: 0 20%;
+    padding: 20px;
+    text-align: left;
+}
+
+input {
+    margin: 10px 0;
+}
+
+#annuler {
+    margin-left: 20px;
+}
+
+.btn {
+    margin-top: 10px;
+}
+
+#Nom {
+    width: 10%;
+}
+
+#login {
+    margin-top: 10px;
+}
+
+#laelnometprenom,
+#inputnometprenom {
+    text-align: center;
+    display: block;
+}
+
+#labelnom {
+    width: 20%;
+    float: left;
+}
+
+#Nom {
+    width: 20%;
+    float: left;
+}
+
+#Prenom input {
+    margin-left: 10%;
+}

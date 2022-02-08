@@ -1,0 +1,27 @@
+body{
+    text-align: center;
+}
+
+h1{
+    color: #555;
+}
+
+form{
+    border: 2px solid #111;
+    margin: 0 30%;
+    padding: 20px;
+    text-align:left;
+
+}
+
+input{
+    margin: 10px 0;
+}
+
+#annuler{
+    margin-left: 20px ;
+}
+
+.btn{
+    margin-top: 10px;
+}
