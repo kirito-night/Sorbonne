@@ -71,6 +71,7 @@ def coteEtu(lEtu, lSpe):
                             else:
                                 continue;
 
+    print ("cote Etudiant")
     for key in dES:
         print(key, " : ", dES[key])
     return dES
@@ -84,7 +85,7 @@ def cote_parcours(lSpe, lEtu):
     nbEtuSpe = []
     for i in range(len(lSpe[0]) - 1):
         nbEtuSpe.append(0)
-    print(nbEtuSpe, "\n")
+    #print(nbEtuSpe, "\n")
     lPurpose = [1 for i in range(len(lSpe))]
 
     while freeSpe != []:
@@ -147,9 +148,58 @@ def cote_parcours(lSpe, lEtu):
             else:
                 res[a] = ["Etu" + str(b)]
 
+    print("cote parcours")
     for key in res:
         print(key, " : ", res[key])
     return res
+
+def instable_check(dico, lSpe , lEtu) :
+    d = convert_liststrtoint(dico)
+    res = []
+
+    for key in d :
+        for i in d[key]:
+            l = found_unstable(i,key,lSpe,lEtu)
+            res.extend(l)
+    return res
+
+
+def found_unstable(index_etu , key , lSpe, lEtu) :
+    res = []
+    index_spe = found_index(lSpe, key) -1
+    for i in range(1 , len(lSpe)) :
+        for j in range(1 , len(lSpe[i])):
+            if lSpe[i].index(index_etu) > j:
+                if lEtu[lSpe[i][j]].index(index_spe) > lEtu[lSpe[i][j]].index(i - 1):
+                    res.append((lSpe[i][0], lSpe[i][j]))
+
+
+            else :
+                break;
+    return res
+
+def pair_instable_etu(dico , lEtu ,lSpe):
+    d  = convert_liststrtoint(dico)
+    pair = []
+    for key in d:
+        for i in d[key] :
+            index_spe = found_index(lSpe , key) -1
+            for j in range(1, lEtu[i])
+                if lEtu[i].index(index_spe) > j:
+                    for k in range ( 1, lSpe[index_spe +1]) :
+                        if ( )
+
+
+def convert_liststrtoint(dico):
+    res = dict()
+    for key in dico:
+        for i in dico[key] :
+            if key in res :
+                res[key].append(int (i[3]))
+            else :
+                res[key] = [int(i[3])]
+
+    return  res
 
 
 def found_index(lSpe, item):

@@ -1,0 +1,53 @@
+.MainPage {
+  text-align: center;
+  width: 100%;
+}
+
+.MainPage-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.MainPage-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.MainPage-link {
+  color: #61dafb;
+}
+.Card {
+  width: 30px;
+  height: 50px;
+  border-radius: 3px;
+  border: 1px solid rebeccapurple;
+  color : red;
+  vertical-align: top;
+  background-color: #282c34;
+  display:inline;
+}
+
+.turn{
+  width: 20px;
+  height: 10px;
+  border-radius: 3px;
+  border: 1px solid rgb(11, 177, 113);
+  color : red;
+  vertical-align: top;
+  background-color: #282c34;
+}
+
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1000000deg);
+  }
+}

@@ -7,14 +7,19 @@ import sys
 def main(): 
     listeEtu = ex1.readEtuPref("PrefEtu.txt")
 
-    print (listeEtu)
+    #print (listeEtu)
     listeSpe = ex1.readSpePref("PrefSpe.txt")
-    print("###\n")
-    print (listeSpe)
+    #print("###\n")
+    #print (listeSpe)
 
-    ex1.coteEtu(listeEtu,listeSpe)
+    d1 = ex1.coteEtu(listeEtu,listeSpe)
     print("\n")
-    ex1.cote_parcours(listeSpe,listeEtu)
+    d2 = ex1.cote_parcours(listeSpe,listeEtu)
+
+    unstable = ex1.instable_check(d1, listeSpe,listeEtu)
+    print(unstable)
+
+
 
 
 

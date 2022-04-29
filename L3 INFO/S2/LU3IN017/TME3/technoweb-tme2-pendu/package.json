@@ -1,0 +1,11 @@
+{
+  "name": "pendu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "author": "",
+  "license": "ISC"
+}
