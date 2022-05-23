@@ -1,0 +1,61 @@
+sources_dir: docs/sources
+templates_dir: docs/templates
+
+pages:
+  - page: "data.md"
+    source: 'python/data.py'
+    classes:
+      - Equation
+      - Environment
+
+  - page: "exc.md"
+    source: 'python/exc.py'
+    classes:
+      - NotUnifiable
+
+  - page: "interp_v1.md"
+    source: 'python/interp_v1.py'
+    functions:
+      - interprete0
+      - interprete1
+      - interprete2
+
+  - page: "interp_v2.md"
+    source: 'python/interp_v2.py'
+    functions:
+      - interprete3
+
+  - page: "interp_v3.md"
+    source: 'python/interp_v3.py'
+    functions:
+      - interprete4
+
+  - page: "print_ast.md"
+    source: 'python/print_ast.py'
+    functions:
+      - print_ast
+      - print_decl
+      - print_pred
+      - print_term
+      - print_line
+
+  - page: "main.md"
+    source: 'python/main.py'
+    functions:
+      - interp_help
+      - load
+      - interp
+
+  - page: "utils.md"
+    source: 'python/utils.py'
+    functions:
+      - subst
+      - replace
+      - unif
+      - rename
+      - choose
+      - solve
+      - solve2
+      - filter
+    classes:
+      - Contexte
