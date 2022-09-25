@@ -1,0 +1,31 @@
+image: pobj
+
+stages:
+- test
+
+TME-7:
+  script: >
+    /home/pobj/run.sh -id TME-7 -name TME-7
+    pobj.expr.test.TestQ1
+    pobj.expr.test.TestQ2
+    pobj.expr.test.TestQ3
+    pobj.expr.test.TestQ4
+    pobj.expr.test.TestQ5
+    pobj.expr.test.TestQ6
+    pobj.expr.test.TestQ7
+  artifacts:
+    reports:
+      junit: report.xml
+
+TME-8:
+  script: >
+    /home/pobj/run.sh -id TME-8 -name TME-8
+    pobj.expr.test.TestQ8
+    pobj.expr.test.TestQ9
+    pobj.expr.test.TestQ10
+    pobj.expr.test.TestQ11
+    pobj.expr.test.TestQ12
+    pobj.expr.test.TestQ13
+  artifacts:
+    reports:
+      junit: report.xml
