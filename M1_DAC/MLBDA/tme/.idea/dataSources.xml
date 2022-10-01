@@ -8,5 +8,13 @@
       <jdbc-url>jdbc:h2:$PROJECT_DIR$/tpmondial</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="@db-oracle.ufr-info-p6.jussieu.fr" uuid="15ea491f-d837-49e9-a8ca-d42d47f06bf4">
+      <driver-ref>oracle.19</driver-ref>
+      <synchronize>true</synchronize>
+      <auto-commit>false</auto-commit>
+      <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
+      <jdbc-url>jdbc:oracle:thin:@db-oracle.ufr-info-p6.jussieu.fr:1521:oracle</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

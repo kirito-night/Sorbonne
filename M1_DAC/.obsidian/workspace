@@ -1,0 +1,136 @@
+{
+  "main": {
+    "id": "229d1aed726db257",
+    "type": "split",
+    "children": [
+      {
+        "id": "5c04a07381db90c4",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "MLBDA/ cours/cours3.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "240d03be7ac479a6",
+    "type": "split",
+    "children": [
+      {
+        "id": "8a66def8010b0134",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3400c6cb314d5c55",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "43b11fb08b4aa73e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "5d15da8b40ecab9b",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "5ca8d36da3dbabe9",
+    "type": "split",
+    "children": [
+      {
+        "id": "4a1c2840a53f9f03",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ab3b1f6a5e1badbe",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "MLBDA/ cours/cours3.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "6c75d3e1cdce0b12",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "MLBDA/ cours/cours3.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "a1a66d55e4a76a20",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "a232226eea0ca065",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "MLBDA/ cours/cours3.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "5c04a07381db90c4",
+  "lastOpenFiles": [
+    "MLBDA/ cours/cours2.md",
+    "MLBDA/ cours/cours3.md"
+  ]
+}
