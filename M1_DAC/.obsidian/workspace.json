@@ -1,0 +1,153 @@
+{
+  "main": {
+    "id": "229d1aed726db257",
+    "type": "split",
+    "children": [
+      {
+        "id": "81d336ebf4bc5951",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d04dcba46172b911",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MLBDA/TD/TD 6 XSchema.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "stacked": true
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "240d03be7ac479a6",
+    "type": "split",
+    "children": [
+      {
+        "id": "8a66def8010b0134",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3400c6cb314d5c55",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "43b11fb08b4aa73e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#PCDATA",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "5d15da8b40ecab9b",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 209.5
+  },
+  "right": {
+    "id": "5ca8d36da3dbabe9",
+    "type": "split",
+    "children": [
+      {
+        "id": "4a1c2840a53f9f03",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ab3b1f6a5e1badbe",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "MLBDA/TD/TD 6 XSchema.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "6c75d3e1cdce0b12",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "MLBDA/TD/TD 6 XSchema.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "a1a66d55e4a76a20",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "a232226eea0ca065",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "MLBDA/TD/TD 6 XSchema.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "d04dcba46172b911",
+  "lastOpenFiles": [
+    "MLBDA/TD/TD 6 XSchema.md",
+    "MLBDA/cours/MLBDA6-XPath.pdf",
+    "MLBDA/TD MLBDA.pdf",
+    "MLBDA/TD/td5.md",
+    "MLBDA/TD/TD2 2.md",
+    "IL/TD/TD5 IL.md",
+    "IL/TD/TD4.md",
+    "IL/TD/TD_2021.pdf",
+    "Untitled.md",
+    "IL/TD/exemplaire de fiche detaille/TD4_TV04_Retour_Alternative.md"
+  ]
+}

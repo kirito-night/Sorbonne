@@ -1,4 +1,5 @@
 {
   "showLineNumber": true,
-  "spellcheck": false
+  "spellcheck": false,
+  "readableLineLength": false
 }

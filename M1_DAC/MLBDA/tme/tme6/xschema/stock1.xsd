@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE xs:schema SYSTEM "XMLSchema.dtd">
+
+<!--
+NOM Pr�nom:
+NOM Pr�nom:
+Binome:
+-->
+
+<!-- Le sch�ma du stock de pi�ces -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="stock">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="pieceBase" type="t_pieceB"></xs:element>
+                <xs:element name="pieceComposite" type="t_pieceC"></xs:element>
+            </xs:choice>
+
+        </xs:complexType>
+        <xs:key name="num_pieceB">
+            <xs:selector xpath="pieceBase" />
+            <xs:field xpath="@numero" />
+        </xs:key>
+        <xs:key name="num_pieceC">
+            <xs:selector xpath="pieceComposite" />
+            <xs:field xpath="@numero" />
+        </xs:key>
+        <xs:keyref name="ref_pieceC" refer="num_pieceC">
+            <xs:selector xpath="pieceComposite" />
+            <xs:field xpath="estContenu" />
+        </xs:keyref>
+        <xs:unique name="unique_pieceC_estContenu">
+            <xs:selector xpath="pieceComposite" />
+            <xs:field xpath="@estContenu" />
+        </xs:unique>
+    </xs:element>
+
+    <xs:complexType name="t_pieceB">
+        <xs:attribute name="numero" type="xs:integer" use="required"></xs:attribute>
+        <xs:attribute name="description" type="xs:string"></xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="t_pieceC">
+        <xs:choice maxOccurs="unbounded">
+            <xs:element name="pieceBase" type="t_pieceB"></xs:element>
+        </xs:choice>
+        <xs:attribute name="numero" type="xs:integer" use="required"></xs:attribute>
+        <xs:attribute name="description" type="xs:string"></xs:attribute>
+        <xs:attribute name="estContenu" type="xs:integer"></xs:attribute>
+    </xs:complexType>
+</xs:schema>

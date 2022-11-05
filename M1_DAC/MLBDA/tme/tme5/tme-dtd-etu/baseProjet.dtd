@@ -1,0 +1,47 @@
+<!ELEMENT base (film* ,acteur* ,abonne*)>
+<!ELEMENT film (RefActeur*, DVD*)>
+<!ATTLIST film
+    noFilm ID  #REQUIRED
+    titre CDATA #REQUIRED
+    nationalite CDATA #REQUIRED
+    realisateur CDATA #REQUIRED
+    couleur CDATA #IMPLIED
+    Annee CDATA #REQUIRED
+    Genre CDATA #REQUIRED
+    duree CDATA #REQUIRED
+    Sypnosis CDATA #REQUIRED
+>
+
+
+<!ELEMENT RefActeur EMPTY>
+<!ATTLIST RefActeur nom IDREF #REQUIRED>
+<!ELEMENT RefDVD EMPTY>
+<!ATTLIST RefDVD idDVD ID #REQUIRED>
+
+<!--ABONNES(Code, Nom, Prenom, NoRue, CodePostal, Ville, Batiment, Etage, Digicode, Telephone, Email, Banque, Guichet, Compte, NbEmprunts)-->
+<!ELEMENT abonne EMPTY>
+<!ATTLIST abonne
+    Code ID #REQUIRED
+    Nom CDATA #REQUIRED
+    Prenom CDATA #REQUIRED
+    NoRue CDATA #REQUIRED
+    CodePostal CDATA #REQUIRED
+    Ville CDATA #REQUIRED
+    Batiment CDATA #IMPLIED
+    Etage CDATA #IMPLIED
+    Digicode CDATA #IMPLIED
+    Telephone CDATA #REQUIRED
+    Email CDATA #REQUIRED
+    Banque CDATA #REQUIRED
+    Guichet CDATA #REQUIRED
+    Compte CDATA #REQUIRED
+    NbEmprunts CDATA #REQUIRED>
+
+<!-- DVD (NoFilm, NoExemplaire, Support, Statut) ;-->
+<!ELEMENT DVD EMPTY>
+<!ATTLIST DVD
+    NoFilm CDATA #REQUIRED
+    IdDVD ID #REQUIRED
+    Support CDATA #REQUIRED
+    Statut CDATA #REQUIRED
+>

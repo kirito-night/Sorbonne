@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "5c04a07381db90c4",
+        "id": "7d8f35169f866c02",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "MLBDA/ cours/cours3.md",
+            "file": "IL/TD/TD4.md",
             "mode": "source",
             "source": false
           }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MLBDA/ cours/cours3.md",
+                "file": "IL/TD/TD4.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MLBDA/ cours/cours3.md",
+                "file": "IL/TD/TD4.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,7 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MLBDA/ cours/cours3.md"
+                "file": "IL/TD/TD4.md"
               }
             }
           }
@@ -128,9 +128,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "5c04a07381db90c4",
+  "active": "7d8f35169f866c02",
   "lastOpenFiles": [
-    "MLBDA/ cours/cours2.md",
-    "MLBDA/ cours/cours3.md"
+    "IL/TD/exemplaire de fiche detaille/TD4_TV04_Retour_Alternative.md",
+    "IL/TD/exemplaire de fiche detaille/TD3_Fiche_Detailler_Retour.md",
+    "IL/TD/exemplaire de fiche detaille/TD4_TV01_Emprunt_Nominal.md",
+    "IL/TD/exemplaire de fiche detaille/TD3_Fiche_Detailler_Emprunt.md",
+    "IL/TD/exemplaire de fiche detaille/TD4_TV02_Emprunt_Alternative.md",
+    "IL/TD/TD4.md",
+    "IL/Cours2021.pdf",
+    "IL/TME_2022.pdf",
+    "IL/TD/TD_2021.pdf",
+    "IL/TD/TD IL.pdf"
   ]
 }

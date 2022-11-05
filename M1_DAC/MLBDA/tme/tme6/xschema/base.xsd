@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE xs:schema SYSTEM "XMLSchema.dtd">
+
+<!-- A Compl�ter :
+
+NOM 1:
+Prenom 1:
+
+NOM 2:
+Prenom 2:
+
+Groupe:
+Binome:
+
+
+Le sch�ma du guide touristique. La d�claration des �l�ments doit �tre imbriqu�e  
+
+-->
+
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!-- � compl�ter :-->
+    <xs:element name="base">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="restaurant" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="fermeture" type="xs:string" minOccurs="0" />
+                            <xs:element name="menu" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:attribute name="nom" type="xs:string" />
+                                    <xs:attribute name="prix" type="xs:integer" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="nom" type="xs:string" use="required" />
+                        <xs:attribute name="etoile" type="xs:integer" use="required" />
+                        <xs:attribute name="ville" type="xs:string" use="required" />
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="ville" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="plusBeauMonument" type="T-plusBeauMonument" minOccurs="0"></xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="nom" type="xs:string" use="required" />
+                        <xs:attribute name="departement" type="xs:integer" use="required" />
+                    </xs:complexType>
+                </xs:element>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="T-plusBeauMonument">
+        <xs:attribute name="nom" type="xs:string" />
+        <xs:attribute name="tarif" type="xs:integer" />
+    </xs:complexType>
+
+
+</xs:schema>
