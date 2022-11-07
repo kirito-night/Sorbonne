@@ -64,7 +64,7 @@ where e.age > 25 and value(u).code = '4IN801'-- le point fait un dereferencement
 
 --b)
 select value(e).nomE
-from lesUE u , table(u.contenu).s, table(s.presents)e 
+from lesUE u , table(u.contenu) s, table(s.presents)e 
 where u.nomU = 'MLBDA' and s.numero = 3 
 
 --c) 
