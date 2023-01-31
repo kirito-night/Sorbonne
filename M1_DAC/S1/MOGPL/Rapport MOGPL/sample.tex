@@ -1,0 +1,97 @@
+\documentclass[twoside,11pt]{article}
+
+\usepackage{UFrecherche}
+\newcommand{\dataset}{{\cal D}}
+\newcommand{\fracpartial}[2]{\frac{\partial #1}{\partial  #2}}
+
+% Heading arguments are {Semester}{year}{Objective}{Date}{}{authors}
+\ufheading{Semester 1}{2022-2023}{Bib.Review}{10.Jan.23}{UF Recherche - 22/23}{M.Rojas}
+
+% Short headings should be running head and authors last names
+
+\ShortHeadings{Short Title}{Nom-1, Nom-2 and Nom-3}
+\firstpageno{1}
+
+\begin{document}
+
+\title{Title of your research}
+
+\author{\name Prenom Nom 1 \email email1@insa-toulouse.fr \\
+       \addr Department of Mechanical Engineering \\
+       INSA Toulouse\\
+       Toulouse, France
+       \AND
+       \name Prenom Nom 2 \email email2@insa-toulouse.fr \\
+       \addr Department of Mechanical Engineering \\
+       INSA Toulouse\\
+       Toulouse, France}
+
+%Name of your tutors
+\editor{E. Marenic, P. Oumaziz and A.C. Araujo}
+
+\maketitle
+
+\begin{abstract}%   <- trailing '%' for backward compatibility of .sty file
+This paper describes the mixtures-of-trees model, a probabilistic 
+model for discrete multidimensional domains.  Mixtures-of-trees 
+generalize the probabilistic trees of \citet{chow:68}
+in a different and complementary direction to that of Bayesian networks.
+We present efficient algorithms for learning mixtures-of-trees 
+models in maximum likelihood and Bayesian frameworks. 
+We also discuss additional efficiencies that can be
+obtained when data are ``sparse,'' and we present data 
+structures and algorithms that exploit such sparseness.
+Experimental results demonstrate the performance of the 
+model for both density estimation and classification. 
+We also discuss the sense in which tree-based classifiers
+perform an implicit form of feature selection, and demonstrate
+a resulting insensitivity to irrelevant attributes.
+\end{abstract}
+
+\begin{keywords}
+  Bayesian Networks, Mixture Models, Chow-Liu Trees
+\end{keywords}
+
+\section{Introduction}
+
+Probabilistic inference has become a core technology in AI,
+largely due to developments in graph-theoretic methods for the 
+representation and manipulation of complex probability 
+distributions~\citep{pearl:88}.  Whether in their guise as 
+directed graphs (Bayesian networks) or as undirected graphs (Markov 
+random fields), \emph{probabilistic graphical models} have a number 
+of virtues as representations of uncertainty and as inference engines.  
+Graphical models allow a separation between qualitative, structural
+aspects of uncertain knowledge and the quantitative, parametric aspects 
+of uncertainty...\\
+
+
+% Acknowledgements should go at the end, before appendices and references
+
+\section{Name of section 2}
+
+
+ Let $u,v,w$ be discrete variables such that $v, w$ do
+not co-occur with $u$ (i.e., $u\neq0\;\Rightarrow \;v=w=0$ in a given
+dataset $\dataset$). Let $N_{v0},N_{w0}$ be the number of data points for
+which $v=0, w=0$ respectively, and let $I_{uv},I_{uw}$ be the
+respective empirical mutual information values based on the sample
+$\dataset$. Then
+\begin{equation}
+N_{v0} \;>\; N_{w0}\;\;\Rightarrow\;\;I_{uv} \;\leq\;I_{uw}
+\end{equation}
+
+with equality only if $u$ is identically 0.
+ Entropies will be denoted
+by $H$. We aim to show that $\fracpartial{I_{uv}}{P_{v0}} < 0$....\\
+
+\section{Conclusions}
+
+Subjects in this study were able to ....
+
+\vskip 0.2in
+
+\bibliography{samplebib}
+
+
+\end{document}

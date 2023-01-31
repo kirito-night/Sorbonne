@@ -1,0 +1,12 @@
+@prefix : <http://example.org/> .
+
+:P1    :name        "john" .
+:P2    :name        "rick" .
+:P3    :name       "lars" .
+:P4    :name        "liz" .
+:P1    :phone        "11-345-89" .
+:P2    :email        "rick@org" .
+:P3    :webpage    "www.lars.com" .
+:P4    :email        "liz@aut.gov" .
+:P4    :phone        "09-134-21" .
+:P4    :webpage    "www.liz.pers" .

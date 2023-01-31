@@ -1,0 +1,258 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper, margin=1.5cm]{geometry}
+
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{xhfill}
+\usepackage{hyperref}
+\hypersetup{colorlinks,citecolor=black,filecolor=black,linkcolor=black,urlcolor=black}
+% options -----------
+\usepackage[french]{babel}
+
+\usepackage{palatino}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+
+% -------------------
+\renewcommand{\baselinestretch}{1.1}
+\setlength{\parskip}{1em}
+\newcommand\ruleafter[1]{#1~\xrfill[.7ex]{0.2pt}}
+\titleformat{\section}
+  {\normalfont\Large\bfseries}{\thesection}{1em}{\ruleafter}
+\titleformat{\subsection}[runin]
+  {\normalfont\large\bfseries}{\thesubsection)}{1em}{}
+
+\setlength\parindent{0pt}
+
+\makeatletter
+\newcommand\HUGE{\@setfontsize\Huge{30}{36}}
+\makeatother
+
+
+
+\begin{document}
+% title page -------
+\thispagestyle{empty}
+\begin{center}
+\includegraphics[width=8cm]{Logo_Sorbonne_Université.png} \\
+\vspace{3cm}
+\HUGE MOGPL \\ Rapport projet \\
+\vfill
+\end{center}
+\large name name \hfill Sorbonne Université \\
+name name \hfill 2022 - 2023
+\pagebreak
+% TOC -------------
+\tableofcontents
+\pagebreak
+% -----------------
+
+
+
+
+
+\section{Linéarisation de \textit{f}}
+\subsection{} Soit le problème suivant :
+$$\textmd{min } \sum_{i=1}^{n} a_{ik} z_{i}$$
+$$\textmd{s.c. } \sum_{i=1}^{n} a_{ik} = k$$
+$$a_{ik} \in \{ 0, 1\}, i=1,\ldots,n $$
+
+Il s'agit d'un problème du sac-à-dos où tous les objets ont le même poids (ici $1$). Dans le cas où nous cherchons à avoir $k$ objets, la solution optimale correspond aux $k$ objets ayant les plus grandes valeurs. \\
+La solution optimale est alors donnée par $L_k(z)$.
+
+
+\subsection{}
+Soit le problème (P) suivant :
+$$\textmd{min } \sum_{i=1}^{n} a_{ik} z_{i}$$
+
+$$ \textmd{s.c. }
+\left \{
+\begin{array}{r c l}
+  \sum_{i=1}^{n} a_{ik}  & = & k \\
+  a_{ik} & \leq & 1
+\end{array}
+\right .
+\quad \Longleftrightarrow \quad \textmd{s.c. }
+\left \{
+\begin{array}{r c l}
+  \sum_{i=1}^{n} a_{ik}  & = & k \\
+  -a_{ik} & \geq & -1
+\end{array}
+\right .
+$$
+$$a_{ik} \geq 0, i=1,\ldots,n \qquad\qquad\qquad a_{ik} \geq 0, i=1,\ldots,n$$
+
+Soit le dual (D) de (P) :
+
+$$\textmd{max } k\,r_{k} + \sum_{i = 1}^{n}b_{ik}$$
+$$ \textmd{s.c. }
+\left \{
+\begin{array}{r c l}
+  r_k - b_{ik} & \leq & z_{i} \\
+\end{array}
+\right .
+$$
+$$b_{ik} \geq 0, i=1,\ldots,n$$
+
+Nous calculons $L(4,7,1,3,9,2)$ en résolvant le programme linéaire suivant :
+$$\textmd{max } k\,r_{k} + \sum_{i = 1}^{6}b_{ik}$$
+$$ \textmd{s.c. }
+\left \{
+\begin{array}{r c l}
+  r_k - b_{1k} & \leq & 1 \\
+  r_k - b_{2k} & \leq & 2 \\
+  r_k - b_{3k} & \leq & 3 \\
+  r_k - b_{4k} & \leq & 4 \\
+  r_k - b_{5k} & \leq & 7 \\
+  r_k - b_{6k} & \leq & 9 \\
+\end{array}
+\right .
+$$
+$$r_k \in \mathbb{R} \textmd{, }b_{ik} \geq 0, i=1,\ldots,6$$
+
+En utilisant Gurobi (fichier \texttt{q12.py}), nous obtenons : 
+$$
+L_1(z) = 1\:; L_2(z) = 3\:; L_3(z) = 6\:; L_4(z) = 10\:; L_5(z) = 17\:; L_6(z) = 26
+$$
+Nous avons bien $L_k(z) = \sum_{i=1}^k z_i$ pour tout $k = 1,\ldots,6$.
+
+
+\subsection{}
+Montrons que $f(x) = \sum_{k=1}^{n}w'_{k}L_{k}(z(x))$ :
+
+\begin{alignat*}{2}
+  f(x) &= \sum_{k=1}^{n}w'_{k}L_{k}(z(x)) \\
+       &= \sum_{k=1}^{n-1}w'_{k}L_{k}(z(x))& &+ w'_{n}L_{n}(z(x)) \\
+       &= \sum_{k=1}^{n-1} \left[ w'_{k} \sum_{i=1}^{k}z_{(i)}(x) \right] & &+ w_n \sum_{i=1}^{n}z_{(i)}(x) \\
+       &= \sum_{k=1}^{n-1} \left[ (w_k - w_{k+1}) \sum_{i=1}^{k}z_{(i)}(x) \right] & &+ w_n \sum_{i=1}^{n}z_{(i)}(x) \\
+       &= \sum_{k=1}^{n-1} \left[ w_k \sum_{i=1}^{k}z_{(i)}(x) \right] - \sum_{k=1}^{n-1} \left[ w_{k+1} \sum_{i=1}^{k}z_{(i)}(x) \right]& &+ w_n \sum_{i=1}^{n}z_{(i)}(x) 
+\end{alignat*}
+\begin{alignat*}{5}
+f(x)&= w_1 z_1 & &+ w_2\left[z_1+z_2\right] & &+ w_3\left[z_1+z_2+z_3\right] & &+ \ldots + w_{n-1}\left[z_1+\ldots+z_{n-1}\right] & &+ w_n\left[z_1+\ldots+z_n\right] \\
+& & &- w_2z_1 & & - w_3\left[z_1+z_2\right] & & - \ldots - w_{n-1}\left[z_1+\ldots+z_{n-2}\right] & &-w_n\left[z_1+\ldots+z_{n-1}\right] \\
+f(x)&= w_1z_1& &+w_2z_2 & & +w_3z_3 & & - \ldots +w_{n-1}z_{n-1} & &+w_nz_n \\
+f(x)&= \sum_{i=1}^{n}w_iz_i
+\end{alignat*}
+
+Nous obtenons bien $f(x)= \sum_{i=1}^{n}w_iz_i(x) = \sum_{k=1}^{n}w'_{k}L_{k}(z(x))$ avec $w'_k = (w_k - w_{k+1})$ pour $k$ allant de $1$ à $n-1$ et $w'_n = w_n$.
+
+\subsection{} Soit la linéarisation de $f$ sous la forme d'un programme linéaire :
+$$\textmd{max }\sum_{k=1}^{n}w'_k(k\,r_k-\sum_{i=1}^{n}b_{ik})$$
+$$ \textmd{s.c. }
+\left \{
+\begin{array}{r c l}
+  r_k - b_{ik} & \leq & z_{i}(x) \\
+  x & \in & X
+\end{array}
+\right .
+$$
+$$r_k \in \mathbb{R}\textmd{, } b_{ik} \geq 0, i=1,\ldots,n$$
+
+Reformulons le problème de l’exemple 1 comme un programme linéaire.
+
+$$\textmd{max }f(x)= \sum_{k=1}^{2}w'_k(k\,r_k-\sum_{i=1}^{2}b_{ik})$$
+$$= w'_1(r_1 - \sum_{i=1}^{2}b_{i1}) + w'_2(2r_2 - \sum_{i=1}^{2}b_{i2}) $$
+$$= r_1 - \sum_{i=1}^{2}b_{i1} + 2r_2 - \sum_{i=1}^{2}b_{i2}$$
+
+$$ \textmd{s.c. }
+\left \{
+\begin{array}{c c l}
+  r_k - b_{ik} & \leq & z_{i}(x) \\
+  x & \in & X
+\end{array}
+\right .
+\quad \Longleftrightarrow \quad \textmd{s.c. }
+\left \{
+\begin{array}{c c l}
+  r_1 - b_{i1} & \leq & z_{i}(x) \\
+  r_2 - b_{i2} & \leq & z_{i}(x) \\
+  \sum_{j=1}^{5}x_j & = & 3
+\end{array}
+\right .
+$$
+$$r_k \in \mathbb{R}\textmd{, } b_{ik} \geq 0 \textmd{ et } i\textmd{, }k\in\{1, 2\}$$
+
+$$\Big\Updownarrow$$
+
+$$\textmd{max }f(x)= r_1 - \sum_{i=1}^{2}b_{i1} + 2r_2 - \sum_{i=1}^{2}b_{i2}$$
+$$
+\textmd{s.c. }
+\left \{
+\begin{array}{c c l}
+  r_1 - b_{11} & \leq & z_{1}(x) \\
+  r_2 - b_{12} & \leq & z_{1}(x) \\
+  r_1 - b_{21} & \leq & z_{2}(x) \\
+  r_2 - b_{22} & \leq & z_{2}(x) \\
+  x_1 + x_2 + x_3 + x_4 + x_5 & = & 3
+\end{array}
+\right .
+$$
+$$r_k \in \mathbb{R}\textmd{, }b_{ik} \geq 0\textmd{, }x_i \in \{0,1\} \textmd{ et }i\textmd{, }k\in\{1, 2\}$$
+
+En utilisant les données de l'exemple 1, nous obtenons :
+$$\textmd{max }f(x)= r_1 - \sum_{i=1}^{2}b_{i1} + 2r_2 - \sum_{i=1}^{2}b_{i2}$$
+$$
+\textmd{s.c. }
+\left \{
+\begin{array}{c c l}
+  r_1 - b_{11} & \leq & 5x_1+ 6x_2+ 4x_3+ 8x_4+x_5 \\
+  r_2 - b_{12} & \leq & 5x_1+ 6x_2+ 4x_3+ 8x_4+x_5 \\
+  r_1 - b_{21} & \leq & 3x_1+ 8x_2+ 6x_3+ 2x_4+ 5x_5 \\
+  r_2 - b_{22} & \leq & 3x_1+ 8x_2+ 6x_3+ 2x_4+ 5x_5 \\
+  x_1 + x_2 + x_3 + x_4 + x_5 & = & 3
+\end{array}
+\right .
+$$
+$$r_k \in \mathbb{R}\textmd{, }b_{ik} \geq 0\textmd{, }x_i \in \{0,1\} \textmd{ et }i\textmd{, }k\in\{1, 2\}$$
+
+$$\Big\Updownarrow$$
+
+$$\textmd{max }f(x)= r_1 - \sum_{i=1}^{2}b_{i1} + 2r_2 - \sum_{i=1}^{2}b_{i2}$$
+$$
+\textmd{s.c. }
+\left \{
+\begin{array}{c c l}
+  r_1 - b_{11} - 5x_1- 6x_2- 4x_3- 8x_4- x_5 & \leq & 0 \\
+  r_2 - b_{12} - 5x_1- 6x_2- 4x_3- 8x_4- x_5& \leq & 0 \\
+  r_1 - b_{21} - 3x_1- 8x_2- 6x_3- 2x_4- 5x_5& \leq & 0 \\
+  r_2 - b_{22} - 3x_1- 8x_2- 6x_3- 2x_4- 5x_5& \leq & 0 \\
+  x_1 + x_2 + x_3 + x_4 + x_5 & = & 3
+\end{array}
+\right .
+$$
+$$r_k \in \mathbb{R} \textmd{, }b_{ik} \geq 0\textmd{, }x_i \in \{0,1\} \textmd{ et }i\textmd{, }k\in\{1, 2\}$$
+
+En utilisant Gurobi (fichier \texttt{q14.py}), nous obtenons comme solution optimale :
+$$f(x) = 50$$
+$$r_1 = 16 \textmd{, }r_2 = 18$$
+$$b_{11} = 0\textmd{, }b_{12} = 0\textmd{, }b_{21} = 0\textmd{, }b_{22} = 2$$
+$$x_1 = 0\textmd{, }x_2 = 1\textmd{, }x_3 = 1\textmd{, }x_4 = 1\textmd{, }x_5 = 0$$
+
+
+\section{Application au partage équitable de biens indivisibles}
+\subsection{} Soit le programme linéaire en variables mixtes suivant :
+$$\textmd{max } f(x) = \sum_{i=1}^nw_iz_{(i)}(x)$$
+$$
+\textmd{s.c. }
+\left \{
+\begin{array}{c c l}
+  \sum_{i=1}^n x_{ij} & = & 1 \\
+  \sum_{j=1}^n x_{ij} & = & 1
+\end{array}
+\right .
+$$
+$$x_{ij} \geq 0 \textmd{ et } i\textmd{, }j = 1,\ldots,n$$
+$$\textmd{Avec } z_i = \sum_{j=1}^{p}u_{ij}x_{ij}$$
+
+Nous considérons le problème suivant :
+\begin{quote}
+\emph{3 individus A, B et C doivent se partager un lot de 6 objets, de valeurs respectives 325, 225, 210, 115, 75 et 50 euros. La valeur totale du lot est de 1000 euros, mais la solution qui consiste à diviser en trois parties égale n'est pas réalisable.}
+\end{quote}
+
+En utilisant d'abord le vecteur poids $w = (3,2,1)$, nous obtenons :
+
+
+\end{document} 

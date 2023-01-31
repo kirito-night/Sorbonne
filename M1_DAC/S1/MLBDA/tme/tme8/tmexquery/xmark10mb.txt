@@ -1,0 +1,16 @@
+<!-- ex1  -->
+<!-- 1. -->
+<results>{
+    for $p in //person
+    where $p/@id ='person0'
+    return <person nom = "{$p/name}"/>
+  }</results>
+
+<!-- 2. -->
+<results>{
+    for $a in//open_auctions/auction[position() <= 3]
+    return <auction initial = "{$a/initial}"/>
+  }
+</results>
+
+<!-- ex2  -->

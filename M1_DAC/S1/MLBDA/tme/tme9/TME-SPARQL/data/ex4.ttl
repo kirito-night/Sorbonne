@@ -1,0 +1,60 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix f: <http://www.cems.uwe.ac.uk/empdept/concept/> .
+@prefix : <http://www.abc.org/> .
+
+
+#rdf types
+:john       a               f:emp .
+:liz        a               f:emp .
+:dan        a               f:emp .
+:larry      a               f:emp .
+:jim        a               f:emp .
+:clark      a               f:emp .
+:robert     a               f:emp .
+
+
+#job
+:john   f:Job    "architect" .
+:liz    f:Job    "doctor" .
+:dan    f:Job    "engineer" .
+:larry  f:Job    "singer" .
+
+#surnames
+:john       foaf:surname    "john" .
+:liz        foaf:surname    "liz" .
+:dan        foaf:surname    "dan" .
+:larry      foaf:surname    "larry" .
+
+
+
+#salary
+:john   f:Sal   "33"    .
+:liz    f:Sal   "42"    .
+:robert f:Sal   "48"    .
+:dan    f:Sal  "33"    .
+
+
+#departement
+:john   f:Dept    "urbanism" .
+:liz    f:Dept    "surgery" .
+:dan    f:Dept    "chemistry" .
+:larry  f:Dept    "culture" .
+:john  f:Dept    "culture" .
+
+
+:urbanism   f:Location   "NE1" .
+:surgery    f:Location   "SW1" .
+:chemistry  f:Location   "Westminster" .
+:culture    f:Location   "Slough" .
+
+
+#manager
+:john   f:Mgr   :jim   .
+:john   f:Mgr   :clark   .
+:liz    f:Mgr   :robert   .
+
+
+
+
